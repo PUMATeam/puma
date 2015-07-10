@@ -33,6 +33,7 @@ Template.register.events({
         errors.push({message: err.reason});
         Session.set('errors', errors);
       } else {
+        Router.go('/projects');
         console.log('User with id: ' + Meteor.userId() + ' added successfully');
       }
     });
