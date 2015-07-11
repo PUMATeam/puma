@@ -1,1 +1,1 @@
-Meteor.subscribe('projectsByUser', Meteor.userId());
+Meteor.subscribe('Projects');

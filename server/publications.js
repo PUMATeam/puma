@@ -1,4 +1,3 @@
-Meteor.publish('projectsByUser', function(userId) {
-  console.log(userId);
-  return Projects.find({owner: userId});
-})
+Meteor.publish('Projects', function() {
+  return Projects.find();
+});
