@@ -6,6 +6,10 @@ Router.route('/register', function() {
   this.render('register');
 });
 
-Router.route('/projects', function() {
-  this.render('projects');
+Router.route('/projects/:_id', {
+    name: 'projects',
+    layoutTemplate: 'applicationLayout',
+    data: function() {
+      return Projects.find({owner: this.params._id});
+    }
 });
