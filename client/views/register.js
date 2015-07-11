@@ -1,6 +1,8 @@
+errors = new ReactiveArray([]);
+
 Template.register.helpers({
   errorList: function() {
-    return Session.get('errors');
+    return errors.list();
   },
 
   formValid: function(user) {
@@ -27,14 +29,15 @@ Template.register.events({
     };
 
     Accounts.createUser(user, function(err) {
-      var errors = [];
       if (err) {
         console.log(err);
         errors.push({message: err.reason});
-        Session.set('errors', errors);
       } else {
-        Router.go('/projects');
         console.log('User with id: ' + Meteor.userId() + ' added successfully');
+        Router.go('projects', {
+          _id: Meteor.userId()
+        });
+
       }
     });
   },
