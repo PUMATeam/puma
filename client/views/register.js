@@ -15,7 +15,7 @@ Template.register.helpers({
 });
 
 Template.register.events({
-  'submit .form-signin': function(e) {
+  'submit .form-signup': function(e) {
     e.preventDefault();
     var user = {
         email: $('#inputEmail').val(),
