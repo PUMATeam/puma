@@ -16,7 +16,6 @@ Template.register.helpers({
 
 Template.register.events({
   'submit .form-signin': function(e) {
-    Session.set('errors', null);
     e.preventDefault();
     var user = {
         email: $('#inputEmail').val(),
