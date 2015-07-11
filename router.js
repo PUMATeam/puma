@@ -8,7 +8,13 @@ Router.route('/register', function() {
 
 Router.route('/projects/:_id', {
     name: 'projects',
+
     layoutTemplate: 'applicationLayout',
+
+    yieldRegions: {
+      'main': { to: 'projects' }
+    },
+
     data: function() {
       return Projects.find({owner: this.params._id});
     }

@@ -1,9 +1,19 @@
 <Template name="applicationLayout">
-  nav.<nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
-        
+        <a href="/projects" class="navbar-brand">My Projects</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/users">Users</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
+  <div class="container">
+    {{ > yield "main" }}
+  </div>
 </Template>
