@@ -11,3 +11,5 @@ less
 momentjs:moment
 accounts-base
 accounts-password
+reactive-var
+manuel:reactivearray
