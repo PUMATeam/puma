@@ -1,5 +1,5 @@
 Template.projects.helpers({
   projects: function() {
-    return Projects.find();
+    return Projects.find({ owner: Meteor.userId() });
   }
 });
