@@ -10,7 +10,7 @@ Router.route('/login', function() {
   this.render('login')
 })
 
-Router.route('/projects/:_id', {
+Router.route('/projects', {
     name: 'projects',
 
     layoutTemplate: 'applicationLayout',
@@ -18,8 +18,4 @@ Router.route('/projects/:_id', {
     yieldRegions: {
       'main': { to: 'projects' }
     },
-
-    data: function() {
-      return Projects.find({owner: this.params._id});
-    }
 });
