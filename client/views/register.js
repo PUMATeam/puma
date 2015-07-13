@@ -10,6 +10,20 @@ Template.register.onCreated(function() {
 
   this.formChanged = new ReactiveVar();
   this.formChanged.set(false);
+
+  this.getUserDetails = function() {
+    var user = {
+      email: $('#inputEmail').val(),
+      password: $('#inputPassword').val(),
+      profile: {
+        userName: $('#inputUsername').val(),
+        firstName: $('#inputFirstName').val(),
+        lastName: $('#inputLastName').val()
+      }
+    };
+
+    return user;
+  }
 });
 
 Template.register.helpers({
@@ -36,30 +50,14 @@ Template.register.helpers({
 
 Template.register.events({
   'keyup .form-signup': function(e, template) {
-    var user = {
-      email: $('#inputEmail').val(),
-      password: $('#inputPassword').val(),
-      profile: {
-        userName: $('#inputUsername').val(),
-        firstName: $('#inputFirstName').val(),
-        lastName: $('#inputLastName').val()
-      }
-    };
+    user = template.getUserDetails();
     template.user.set(user);
     template.formChanged.set(true);
   },
 
   'submit .form-signup': function(e, template) {
     e.preventDefault();
-    var user = {
-      email: $('#inputEmail').val(),
-      password: $('#inputPassword').val(),
-      profile: {
-        userName: $('#inputUsername').val(),
-        firstName: $('#inputFirstName').val(),
-        lastName: $('#inputLastName').val()
-      }
-    };
+    var user = template.getUserDetails();
 
     Accounts.createUser(user, function(err) {
       if (err) {
@@ -69,9 +67,7 @@ Template.register.events({
         template.errors.set(errors);
       } else {
         console.log('User with id: ' + Meteor.userId() + ' added successfully');
-        Router.go('projects', {
-          _id: Meteor.userId()
-        });
+        Router.go('projects');
       }
     });
   },
