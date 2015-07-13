@@ -45,6 +45,7 @@ Template.register.events({
         lastName: $('#inputLastName').val()
       }
     };
+    
     template.user.set(user);
     template.formChanged.set(true);
   },
