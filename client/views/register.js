@@ -39,7 +39,6 @@ Template.register.helpers({
                       !$.isEmptyObject(user.profile.lastName) &&
                       !$.isEmptyObject(user.email) &&
                       !$.isEmptyObject(user.password));
-      console.log(isValid);
       Template.instance().formValid.set(isValid);
       return !Template.instance().formValid.get();
     }

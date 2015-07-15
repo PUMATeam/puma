@@ -1,5 +1,8 @@
 <Template name="projects">
   <h2>Your projects</h2>
+  {{#if projectsEmpty }}
+    <a class="btn btn-primary" href="/new_project"> New Project</a>
+  {{else}}
   <table class="table table-striped">
     <thead>
       <th>Name</th>
@@ -17,4 +20,5 @@
       {{/each}}
     </tbody>
   </table>
+  {{/if}}
 </Template>

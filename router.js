@@ -17,5 +17,15 @@ Router.route('/projects', {
 
     yieldRegions: {
       'main': { to: 'projects' }
-    },
+    }
+});
+
+Router.route('/new_project', {
+  name: 'createProject',
+
+  layoutTemplate: 'applicationLayout',
+
+  yieldRegions: {
+    'main': { to: 'createProject'}
+  }
 });
