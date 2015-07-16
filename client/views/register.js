@@ -15,8 +15,8 @@ Template.register.onCreated(function() {
     var user = {
       email: $('#inputEmail').val(),
       password: $('#inputPassword').val(),
+      username: $('#inputUsername').val(),
       profile: {
-        userName: $('#inputUsername').val(),
         firstName: $('#inputFirstName').val(),
         lastName: $('#inputLastName').val()
       }
@@ -34,7 +34,7 @@ Template.register.helpers({
   formInvalid: function(user) {
     if (Template.instance().formChanged.get()) {
       var user = Template.instance().user.get();
-      var isValid = (!$.isEmptyObject(user.profile.userName) &&
+      var isValid = (!$.isEmptyObject(user.username) &&
                       !$.isEmptyObject(user.profile.firstName) &&
                       !$.isEmptyObject(user.profile.lastName) &&
                       !$.isEmptyObject(user.email) &&

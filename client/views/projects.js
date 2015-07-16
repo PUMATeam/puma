@@ -10,12 +10,11 @@ Template.projects.helpers({
 
 Template.projects.events({
   'submit #new-project': function(e, template) {
-    e.preventDefault();
     var project = {
       name: $('#project-name').val(),
       description: $('#project-description').val(),
       owner: { _id: Meteor.userId(),
-               userName: Meteor.user().profile.userName
+               username: Meteor.user().username
              }
     };
 
