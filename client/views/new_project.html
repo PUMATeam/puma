@@ -1,9 +1,20 @@
 <template name="createProject">
-  <div class="centered-div">
-    <form class="form-horizontal">
-      <input type="text" class="form-control form-group" placeholder="Project name">
-      <textarea class="form-control form-group" rows="2" placeholder="description"></textarea>
-      <input class="btn btn-default form-group" type="submit" value="Create Project" />
-    </form>
+  <div class="modal fade" id="create-project" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create Project</h4>
+        </div>
+        <div class="modal-body">
+          <div class="new-project-div">
+            <form class="form-horizontal">
+              <input type="text" class="form-control form-group" placeholder="Project name">
+              <textarea class="form-control form-group" rows="2" placeholder="Description"></textarea>
+              <input class="btn btn-default form-group" type="submit" value="Create Project" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
