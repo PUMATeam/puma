@@ -9,9 +9,4 @@ Template.projects.helpers({
 });
 
 Template.projects.events({
-  // "click #create-project-button": function(e, template) {
-  //   e.preventDefault();
-  //   console.log("clicked");
-  //   $("#create-project").modal("show");
-  // }
 });
