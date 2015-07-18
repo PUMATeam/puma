@@ -4,8 +4,10 @@ Template.projectCreate.events({
 
     var project = {
       name: $(e.target).find('#project-name').val(),
-      description: $(e.target).find('#project-description').val(),
-      
+      description: $(e.target).find('#project-description').val()
     }
+
+    project._id = Projects.insert(project);
+    Router.go('projectPage', project);
   }
 });
