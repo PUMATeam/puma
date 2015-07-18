@@ -1,7 +1,15 @@
 <template name="projectCreate">
-  <form class="form-horizontal" id="new-project">
-    <input id="project-name" type="text" class="form-control form-group" placeholder="Project name">
-    <textarea id="project-description" class="form-control form-group" rows="2" placeholder="Description"></textarea>
-    <input class="btn-lg btn-primary form-group" type="submit" value="Create" />
-  </form>
+  <div class="container form-horizontal project-form">
+    <form class="form-horizontal" id="new-project-from">
+      <div class="form-group">
+        <input id="project-name" type="text" class="form-control form-group" placeholder="Project name">
+      </div>
+      <div class="form-group">
+        <textarea id="project-description" class="form-control form-group" rows="2" placeholder="Description"></textarea>
+      </div>
+      <div class="form-group">
+        <input class="btn-lg btn-primary form-group btn-block" type="submit" value="Create" />
+      </div>
+    </form>
+  </div>
 </template>
