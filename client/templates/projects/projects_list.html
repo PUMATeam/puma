@@ -1,4 +1,9 @@
 <template name="projectsList">
-  {{#each posts}}
+  {{#each projects}}
+    <div class="project-item">
+      <h1>{{name}}</h1>
+      <span>{{description}}</span>
+      <a href="/user" class="project-item-username">{{owner.username}}</a>
+    </div>
   {{/each}}
 </template>
