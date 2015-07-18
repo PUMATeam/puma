@@ -11,9 +11,11 @@
     </div>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
-        <li>
-          <a href="{{pathFor 'projectCreate'}}">Create Project</a>
-        </li>
+        {{#if currentUser }}
+          <li>
+            <a href="{{pathFor 'projectCreate'}}">Create Project</a>
+          </li>
+        {{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{> loginButtons}}
