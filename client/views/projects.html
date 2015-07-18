@@ -1,7 +1,7 @@
 <Template name="projects">
-  <h2>Your projects</h2>
-  {{#if projectsEmpty }}
-    You have no project. <a id="create-project-button" data-toggle="modal" data-target="#create-project">create one</a>
+  <h2>Your projects:</h2>
+  {{#if isEmpty projects }}
+    You have no project. <a id="create-project-button" data-toggle="modal" data-target="#create-project">Create one</a>
   {{else}}
   <table class="table table-striped">
     <thead>
@@ -21,6 +21,9 @@
     </tbody>
     <button id="create-project-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-project"> New Project</button>
   </table>
+  {{/if}}
+  {{#if isEmpty memberOf }}
+  <h2>Projects you are member of:</h2>
   {{/if}}
   {{> createProject }}
 </Template>

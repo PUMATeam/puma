@@ -2,10 +2,12 @@ Template.projects.helpers({
   projects: function() {
     return Projects.find({ 'owner._id': Meteor.userId() });
   },
-
-  projectsEmpty: function() {
-    return Projects.find({ 'owner._id': Meteor.userId() }).count() == 0;
-  }
+  
+  memberOf: function() {
+    return Projects.find({
+      'members.userId': Meteor.userId()
+    });
+  },
 });
 
 Template.projects.events({
