@@ -1,13 +1,18 @@
 <template name="header">
-  <nav class="navbar navbar-inverse" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a href="/" class="navbar-brand">PUMA</a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-        </ul>
-      </div>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">PUMA</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        {{> loginButtons}}
+      </ul>
     </div>
   </nav>
 </template>
