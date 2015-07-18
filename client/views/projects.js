@@ -10,6 +10,7 @@ Template.projects.helpers({
 
 Template.projects.events({
   'submit #new-project': function(e, template) {
+    e.preventDefault();
     var project = {
       name: $('#project-name').val(),
       description: $('#project-description').val(),
