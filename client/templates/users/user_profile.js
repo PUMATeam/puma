@@ -6,5 +6,9 @@ Template.userProfile.helpers({
   gravatarURL: function() {
     var hash = Gravatar.hash(this.emails[0].address);
     return Gravatar.imageUrl(hash);
+  },
+
+  projects: function() {
+    return Projects.find({ "owner.userId": this._id });
   }
 });

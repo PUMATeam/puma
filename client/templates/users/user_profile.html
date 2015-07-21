@@ -9,5 +9,11 @@
         {{ fullName }}
       </div>
     </div>
+    <h2>User's projects</h2>
+    <ul>
+    {{#each projects}}
+      <li><a href="{{ pathFor 'projectPage' projectId=_id }}">{{ name }}</a></li>
+    {{/each}}
+    </ul>
   </div>
 </template>
