@@ -9,5 +9,5 @@ Accounts.ui.config({
     fieldLabel: 'Last name',
     inputType: 'text',
     visible: true  }],
-    passwordSignupFields: 'USERNAME_ONLY'
+    passwordSignupFields: 'USERNAME_AND_EMAIL'
 })
