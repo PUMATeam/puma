@@ -5,7 +5,7 @@
       <span>{{description}}</span>
       <a href="{{ pathFor 'userProfile' userId=owner.userId }}" class="project-item-username">{{owner.username}}</a>
       {{#if canJoinProject Meteor.userId _id }}
-        <a class="btn btn-default">Join project</a>
+        <a class="btn btn-default">Join</a>
       {{/if}}
     </div>
   </div>
