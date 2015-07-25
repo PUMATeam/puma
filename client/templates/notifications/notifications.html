@@ -1,20 +1,20 @@
 <template name="notifications">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-  Notifications
-  {{#if notificationCount }}
-    <span class="badge badge-inverse">{{ notificationCount }}</span>
-  {{/if}}
-  <b class="caret"></b>
-</a>
+    Notifications
+    {{#if notificationCount }}
+      <span class="badge badge-inverse">{{ notificationCount }}</span>
+    {{/if}}
+    <b class="caret"></b>
+  </a>
   <ul class="notification dropdown-menu">
     {{#if notificationCount}}
       {{#each notifications}}
-        {{> notificationItem }}
+        {{> interactiveNotificationItem }}
       {{/each}}
     {{else}}
-      <li>
-        <span>No Notifications</span>
-      </li>
+    <li>
+      <span>No Notifications</span>
+    </li>
     {{/if}}
   </ul>
 </template>
@@ -24,5 +24,17 @@
     <a href="{{notificationPostPath}}">
       {{ notificationText }}
     </a>
+  </li>
+</template>
+
+<template name="interactiveNotificationItem">
+  <li>
+    <div class="notification-container">
+      {{ notificationText }}
+      <span class="notification-buttons">
+        <button class="glyphicon glyphicon-ok"></button>
+        <button class="glyphicon glyphicon-remove"></button>
+      </span>
+    </div>
   </li>
 </template>
