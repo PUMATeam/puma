@@ -1,15 +1,15 @@
 Template.projectItem.helpers({
-  canJoinProject:  function(userId, projectId) {
+  canJoinProject:  function(projectId) {
     var projectOwnerOrMember = Projects.find({ $or:
       [{
-        'owner.userId': userId,
+        'owner.userId': Meteor.userId(),
         _id: projectId},
         {
           members:
           {
             $elemMatch:
             {
-              userId: userId
+              userId: Meteor.userId()
             }
           }
         }
@@ -43,6 +43,5 @@ Template.projectItem.events({
         Router.go('projectPage', this._id);
       }
     });
-
   }
 });
