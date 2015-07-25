@@ -5,3 +5,7 @@ Meteor.publish('Projects', function() {
 Meteor.publish('UserData', function() {
   return Meteor.users.find();
 });
+
+Meteor.publish('Notifications', function() {
+  return Notifications.find();
+});
