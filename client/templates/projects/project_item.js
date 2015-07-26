@@ -38,7 +38,7 @@ Template.projectItem.events({
 
     Meteor.call('addRequest', request, function (err, result) {
       if (err) {
-
+        console.log(err.reason);
       } else {
         Router.go('projectPage', this._id);
       }
