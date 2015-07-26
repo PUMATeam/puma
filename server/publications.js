@@ -7,5 +7,9 @@ Meteor.publish('UserData', function() {
 });
 
 Meteor.publish('Notifications', function() {
-  return Notifications.find();
+  if (this.userId) {
+    return Notifications.find({});
+  }
+
+  return null;
 });
