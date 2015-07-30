@@ -4,9 +4,13 @@
       <h1>{{name}}</h1>
       <span>{{description}}</span>
       <a href="{{ pathFor 'userProfile' userId=owner.userId }}" class="project-item-username">{{owner.username}}</a>
-      {{#if canJoinProject _id }}
+      {{#if joinProject _id }}
       <span class="join-button">
-        <a class="btn btn-default" href="{{ pathFor 'projectPage' }}">Join</a>
+        {{#if isPending _id }}
+          <button class="btn btn-default" disabled="disabled">Pending...</button>
+        {{else}}
+          <a class="btn btn-default" href="{{ pathFor 'projectPage' }}">Join</a>
+        {{/if}}
       </span>
       {{/if}}
     </div>

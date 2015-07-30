@@ -1,5 +1,5 @@
 Template.projectItem.helpers({
-  canJoinProject:  function(projectId) {
+  joinProject:  function(projectId) {
     var projectOwnerOrMember = Projects.find({ $or:
       [{
         'owner.userId': Meteor.userId(),
@@ -18,6 +18,12 @@ Template.projectItem.helpers({
     );
 
     return projectOwnerOrMember.count() === 0 && Meteor.userId();
+  },
+
+  isPending: function(projectId) {
+    console.log(Meteor.userId() + " " + projectId);
+    console.log(hasRequestPending(Meteor.userId(), projectId));
+    return hasRequestPending(Meteor.userId(), projectId);
   }
 });
 
