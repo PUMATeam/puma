@@ -21,8 +21,8 @@ Template.projectItem.helpers({
   },
 
   isPending: function(projectId) {
-    console.log(Meteor.userId() + " " + projectId);
-    console.log(hasRequestPending(Meteor.userId(), projectId));
+    // console.log(Meteor.userId() + " " + projectId);
+    //console.log(hasRequestPending(Meteor.userId(), projectId));
     return hasRequestPending(Meteor.userId(), projectId);
   }
 });
@@ -30,6 +30,7 @@ Template.projectItem.helpers({
 Template.projectItem.events({
   'click .join-button': function(e) {
     e.preventDefault();
+    var that = this;
     var request = {
       user: {
         userId: Meteor.userId(),
@@ -46,7 +47,8 @@ Template.projectItem.events({
       if (err) {
         console.log(err.reason);
       } else {
-        Router.go('projectPage', { _id: this._id } );
+	console.log(that._id);
+        Router.go('projectPage', { _id: that._id } );
       }
     });
   },
