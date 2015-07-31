@@ -1,8 +1,8 @@
 # PUMA
-PUMA is best project management system
+PUMA is a project management system - more (actual, working) features coming soon.
 
 ## Running Puma
-Running PUMA is easy:
+Running PUMA is easy:  
 a. Install git (from the [official website](https://git-scm.com/)).  
 b. Install Meteor (which you can download from [here](https://www.meteor.com)).  
 c. clone the project:
