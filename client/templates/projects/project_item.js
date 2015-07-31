@@ -46,8 +46,11 @@ Template.projectItem.events({
       if (err) {
         console.log(err.reason);
       } else {
-        Router.go('projectPage', this._id);
+        Router.go('projectPage', { _id: this._id } );
       }
     });
+  },
+  'click .project-name': function(e) {
+	Router.go('projectPage', { _id: this._id } );
   }
 });
