@@ -6,3 +6,7 @@ Template.notifications.helpers({
     return Notifications.find({ userId: Meteor.userId() }).count();
   }
 });
+
+Template.notifications.events({
+
+});
