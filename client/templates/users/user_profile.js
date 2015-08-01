@@ -10,5 +10,9 @@ Template.userProfile.helpers({
 
   projects: function() {
     return Projects.find({ "owner.userId": this._id });
+  },
+
+  memberOfProjects: function() {
+    return Projects.find({ "members.userId": this._id }, { "_id": 1, "name": 1});
   }
 });
