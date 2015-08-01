@@ -53,8 +53,5 @@ Template.projectItem.events({
   },
   'click .project-name': function(e) {
 	Router.go('projectPage', { _id: this._id } );
-  },
-  'mouseover .project-name': function (e) {
-    e.toElement.style.cursor = "pointer";
   }
 });
