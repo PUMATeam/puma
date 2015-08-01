@@ -15,5 +15,11 @@
       <li><a href="{{ pathFor 'projectPage' projectId=_id }}">{{ name }}</a></li>
     {{/each}}
     </ul>
+	<h2>Member of</h2>
+	<ul>
+	{{#each memberOfProjects}}
+	  <li> <a href="{{ pathFor 'projectPage' projectId=_id }}">{{ name }} </a></li>
+	{{/each}}
+	</ul>
   </div>
 </template>
