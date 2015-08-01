@@ -5,8 +5,6 @@ Template.registerHelper('isEmpty', function(collection) {
 // Just a cosmetic change - when logging out, route to '/'.
 Template._loginButtons.events({
 	'click #login-buttons-logout': function (ev) {
-		if (Meteor.isClient) {
-			Router.go('/');
-		}
+		Router.go('/');
 	}
 });
