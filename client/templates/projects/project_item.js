@@ -28,6 +28,8 @@ Template.projectItem.helpers({
 Template.projectItem.events({
   'click .join-button': function(e) {
     e.preventDefault();
+
+	// Stupid hack...
     var that = this;
     var request = {
       user: {
@@ -43,9 +45,8 @@ Template.projectItem.events({
 
     Meteor.call('addRequest', request, function (err, result) {
       if (err) {
-        console.log(err.reason);
+		console.error(err.reason);
       } else {
-	console.log(that._id);
         Router.go('projectPage', { _id: that._id } );
       }
     });
