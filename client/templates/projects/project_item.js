@@ -21,8 +21,6 @@ Template.projectItem.helpers({
   },
 
   isPending: function(projectId) {
-    // console.log(Meteor.userId() + " " + projectId);
-    //console.log(hasRequestPending(Meteor.userId(), projectId));
     return hasRequestPending(Meteor.userId(), projectId);
   }
 });
