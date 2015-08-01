@@ -1,5 +1,5 @@
 Template.registerHelper('isEmpty', function(collection) {
-  return collection.count() == 0;
+  return collection.count() === 0;
 });
 
 // Just a cosmetic change - when logging out, route to '/'.
