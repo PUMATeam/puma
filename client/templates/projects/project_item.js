@@ -29,8 +29,9 @@ Template.projectItem.events({
   'click .join-button': function(e) {
     e.preventDefault();
 
-	// Stupid hack...
+  	// TODO use arrow function when ES6 support is available
     var that = this;
+
     var request = {
       user: {
         userId: Meteor.userId(),
