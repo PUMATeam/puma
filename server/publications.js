@@ -8,7 +8,10 @@ Meteor.publish('UserData', function() {
 
 Meteor.publish('Notifications', function() {
   check(this.userId, String);
-  return Notifications.find({userId: this.userId});
+  return Notifications.find({
+    userId: this.userId,
+    read: false
+  });
 });
 
 Meteor.publish('Requests', function() {
