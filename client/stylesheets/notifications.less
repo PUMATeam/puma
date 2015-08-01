@@ -1,0 +1,24 @@
+.notification-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 0;
+
+  .notification-item.interactive {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding-left: 2px;
+    padding-right: 2px;
+
+    .notification-text {
+      flex-basis: 85%;
+    }
+
+    .notification-buttons {
+      flex-basis: 15%;
+      order: 2;
+    }
+  }
+}
