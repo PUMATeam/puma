@@ -13,6 +13,6 @@ Template.userProfile.helpers({
   },
 
   memberOfProjects: function() {
-    return Projects.find({ "members": this._id }, { "_id": 1, "name": 1});
+    return Projects.find({ "members.userId": this._id }, { "userId": 1, "username": 1});
   }
 });
