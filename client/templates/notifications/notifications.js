@@ -6,7 +6,8 @@ Template.notifications.helpers({
     return Notifications.find({ userId: Meteor.userId() }).count();
   },
   isInteractive: function(notification) {
-    return Notification.findOne({_id: notification._id}).type === 'interactive';
+    debugger
+    return notification === 'interactive';
   }
 });
 
