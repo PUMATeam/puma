@@ -4,6 +4,6 @@ Template.meteorErrors.helpers({
   }
 });
 
-Template.meteorError.rendered = function() {
+Template.meteorError.onRendered(function() {
   var error = this.data;
-};
+});
