@@ -12,7 +12,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
-  api.use(['minimongo', 'mongo-livedata', 'templating', 'client']);
+  api.use(['minimongo', 'mongo-livedata', 'templating'], 'client');
   api.addFiles(['errors.js', 'errors_list.html', 'errors_list.js'], 'client');
 
   if (api.export) {
