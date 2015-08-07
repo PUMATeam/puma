@@ -6,13 +6,18 @@ Template.projectCreate.events({
       description: $(e.target).find('#project-description').val()
     }
 
-    Meteor.call('insertProject', project, function(err, result) {
-      if (err) {
-        //TODO display errors in a more sensible manner
-        return alert(err.reason);
-      }
+    if (!project.name) {
+      Errors.throw('Please enter a project name');
+    } else if (!project.description) {
+      Errors.throw('Please enter a description of the project');
+    } else {
+      Meteor.call('insertProject', project, function(err, result) {
+        if (err) {
+          Errors.throw(error.reason);
+        }
 
-      Router.go('projectPage', { _id: result._id });
-    });
+        Router.go('projectPage', { _id: result._id });
+      });
+    }
   }
 });
