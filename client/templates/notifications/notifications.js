@@ -13,7 +13,7 @@ Template.notifications.events({
 
     var request = {
       userId: self.userId,
-      requestingUserId: self.requestingUserId,
+      requestingUserId: self.extraFields.requestingUserId,
       requestId: self.extraFields.requestId,
       projectId: self.extraFields.projectId,
       notificationId: self._id
@@ -21,7 +21,25 @@ Template.notifications.events({
 
     Meteor.call('addUserToProject', request, function(err, result) {
       if (err) {
-        console.log(err.reason);
+        Errors.throw(err.reason);
+      }
+    });
+  },
+
+  'click #reject-button': function (e) {
+    var self = this;
+    debugger
+    var request = {
+      userId: self.userId,
+      requestId: self.extraFields.requestId,
+      requestingUserId: self.extraFields.requestingUserId,
+      projectId: self.extraFields.projectId,
+      notificationId: self._id
+    };
+
+    Meteor.call('rejectUser', request, function(err, result) {
+      if (err) {
+        Errors.throw(err.reason);
       }
     });
   }
