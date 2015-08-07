@@ -4,6 +4,9 @@ Template.notifications.helpers({
   },
   notificationCount: function() {
     return Notifications.find({ userId: Meteor.userId() }).count();
+  },
+  isInteractive: function(notification) {
+    return Notification.findOne({_id: notification._id}).type === 'interactive';
   }
 });
 
