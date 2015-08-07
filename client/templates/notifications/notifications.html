@@ -9,7 +9,11 @@
   <ul class="dropdown-menu">
     {{#if notificationCount}}
       {{#each notifications}}
-        {{> interactiveNotificationItem }}
+        {{#if isInteractive type}}
+          {{> interactiveNotificationItem }}
+        {{else}}
+          {{> notificationItem}}
+        {{/if}}
       {{/each}}
     {{else}}
     <li>
