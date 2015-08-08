@@ -4,8 +4,7 @@ Template.userProfile.helpers({
   },
 
   gravatarURL: function() {
-    var hash = Gravatar.hash(this.emails[0].address);
-    return Gravatar.imageUrl(hash);
+    return this.profile.gravatarURL;
   },
 
   projects: function() {
