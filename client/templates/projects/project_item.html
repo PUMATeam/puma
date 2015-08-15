@@ -9,7 +9,11 @@
         {{#if isPending _id }}
           <button class="btn btn-default" disabled="disabled">Pending...</button>
         {{else}}
-          <a class="btn btn-default" href="{{ pathFor 'projectPage' }}">Join</a>
+          {{#if isRejected _id}}
+            <button class="btn btn-default" disabled="disabled">Rejected</button>
+          {{else}}
+           <a class="btn btn-default" href="{{ pathFor 'projectPage' }}">Join</a>
+          {{/if}}
         {{/if}}
       </span>
       {{/if}}
