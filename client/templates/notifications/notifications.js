@@ -6,7 +6,6 @@ Template.notifications.helpers({
     return Notifications.find({ userId: Meteor.userId() }).count();
   },
   isInteractive: function(notification) {
-    debugger
     return notification === 'interactive';
   }
 });
@@ -32,7 +31,7 @@ Template.notifications.events({
 
   'click #reject-button': function (e) {
     var self = this;
-    debugger
+
     var request = {
       userId: self.userId,
       requestId: self.extraFields.requestId,
