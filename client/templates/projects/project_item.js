@@ -20,6 +20,12 @@ Template.projectItem.helpers({
     return projectOwnerOrMember.count() === 0 && Meteor.userId();
   },
 
+  isRejected: function(projectId) {
+    var rejectedRequest = Requests.findOne({'project.projectId': projectId, 'user.userId': Meteor.userId(), status: 'rejected'});
+
+    return !!rejectedRequest;
+  },
+
   isPending: function(projectId) {
     return hasRequestPending(Meteor.userId(), projectId);
   }
