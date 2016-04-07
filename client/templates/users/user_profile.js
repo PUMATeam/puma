@@ -13,5 +13,9 @@ Template.userProfile.helpers({
 
   memberOfProjects: function() {
     return Projects.find({ "members.userId": Meteor.userId() }, { "userId": 1, "username": 1});
+  },
+
+  isMemberOf: function() {
+    return Projects.find({ "members.userId": Meteor.userId() }, { "userId": 1, "username": 1}).count() > 0;
   }
 });
