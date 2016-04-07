@@ -18,7 +18,6 @@ audit-argument-checks
 sacha:spin
 jparker:gravatar
 bennyz:errors
-standard-minifiers
 meteor-base
 mobile-experience
 mongo
@@ -32,3 +31,5 @@ random
 ejson
 spacebars
 check
+standard-minifier-css
+standard-minifier-js
